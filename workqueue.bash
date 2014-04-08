@@ -15,7 +15,7 @@ JOBS_FILE='/path/to/your/jobs.file'
 # load_avg maybe be something like: number of cores - 1
 LOAD_AVG=3
 # minimum interval in seconds between the start of two batch jobs
-TIME_WINDOW=5
+TIME_WINDOW=30
 
 #
 # Config end 
