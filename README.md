@@ -19,8 +19,12 @@ Simple job queue in bash using **atd** for Linux.
 
 ## Configuration
 
-Tune up the config variables on the file:
+Set up your jobs on a plain text file, one task by line. Example:
 
+    /path/to/script1.sh
+    sudo -u otheruser nice -n 15 /path/to/script2.sh
+
+Tune up the config variables on the file:
 
     JOBS_FILE='/path/to/your/jobs.file'
     # load_avg maybe be something like: number of cores - 1
