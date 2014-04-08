@@ -47,26 +47,30 @@ case "$1" in
 
     "status")
 
-        for i in $(atq | cut -f 1); do
-            at -c $i |tail -2|head -1;
-        done
+        if [ $(atq |wc -l) -gt 0 ]; then
+
+            echo 'Running, at queued jobs:'
+            for i in $(atq | cut -f 1); do
+                at -c $i |tail -2|head -1;
+            done
+        fi
         ;;
 
     "start")
 
         # rerun at-daemon with the specified parameters
-        service atd stop
-        atd -l $LOAD_AVG -b $TIME_WINDOW
+        service atd stop > /dev/null 2>&1
+        atd -l $LOAD_AVG -b $TIME_WINDOW > /dev/null 2>&1
 
         if [ ! $(atq -q A|wc -l) -gt 1 ]; then
         
             IFS=$'\r\n' TASKS=($(cat $JOBS_FILE))
             for t in "${TASKS[@]}"; do
-                echo "$t" | at -M -q A now 
+                echo "$t" | at -M -q A now > /dev/nul 2>&1
             done
 
         fi
 
-        [ ! $(atq -q Z|wc -l) -gt 0 ] && echo "$SCRIPT_FULLPATH start" | at -q Z now
+        [ ! $(atq -q Z|wc -l) -gt 0 ] && echo "$SCRIPT_FULLPATH start" | at -q Z now > /dev/nul 2>&1
         ;;
 esac
