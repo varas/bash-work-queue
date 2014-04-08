@@ -11,7 +11,7 @@
 # Config:
 #
 
-JOBS_FILE='/path/to/your/jobs.file'
+JOBS_FILE='/path/to/your/workqueue.jobs'
 # load_avg maybe be something like: number of cores - 1
 LOAD_AVG=3
 # minimum interval in seconds between the start of two batch jobs
