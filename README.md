@@ -36,11 +36,11 @@ Tune up the config variables on the file:
 
 You can run it manually:
 
-    /path/to/workqueue.bash [start|stop|status]
+    /path/to/workqueue.bash [start|stop|status|dump TASK_ID]
 
 Or in case you have placed it at `/etd/init.d/` you can run it as a service:
 
-    service workqueue.bash [start|stop|status]
+    service workqueue.bash [start|stop|status|dump TASK_ID]
 
 ### Note
 

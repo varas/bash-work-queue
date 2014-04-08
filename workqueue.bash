@@ -29,7 +29,7 @@ SCRIPT_FULLPATH=$SCRIPT_PATH/$SCRIPT
 
 if [ $# -lt 1 ]
 then
-    echo "Usage : $SCRIPT_FULLPATH [start|stop|status]"
+    echo "Usage : $SCRIPT_FULLPATH [start|stop|status|dump TASK_ID]"
     exit
 fi
 
@@ -51,9 +51,18 @@ case "$1" in
 
             echo 'Running, at queued jobs:'
             for i in $(atq | cut -f 1); do
-                at -c $i |tail -2|head -1;
+                echo "$i";
             done
         fi
+        ;;
+
+    "dump")
+
+        if [ $# -lt 2 ]; then
+            echo "Usage : $SCRIPT_FULLPATH dump TASK_ID"
+            exit
+        fi
+        at -c $2
         ;;
 
     "start")
