@@ -26,7 +26,7 @@ Set up your jobs on a plain text file, one task by line. Example:
 
 Tune up the config variables on the file:
 
-    JOBS_FILE='/path/to/your/jobs.file'
+    JOBS_FILE='/path/to/your/workqueue.jobs'
     # load_avg maybe be something like: number of cores - 1
     LOAD_AVG=3
     # minimum interval in seconds between the start of two batch jobs
