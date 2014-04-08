@@ -1,7 +1,7 @@
 bash-work-queue
 ===============
 
-Simple job queue in bash using **atd**.
+Simple job queue in bash using **atd** for Linux.
 
 > Because cron is not a job queue.
 
@@ -15,7 +15,7 @@ Simple job queue in bash using **atd**.
 
 ## Install
 
-*Optional*. You can place workqueue.bash in /etd/init.d/ and get it started at boot time.
+*Optional*. You can place workqueue.bash in `/etd/init.d/` and get it started at boot time.
 
 ## Configuration
 
@@ -34,10 +34,10 @@ You can run it manually:
 
     /path/to/workqueue.bash [start|stop|status]
 
-Or in case you have placed it at /etd/init.d/ you can run it as a service:
+Or in case you have placed it at `/etd/init.d/` you can run it as a service:
 
     service workqueue.bash [start|stop|status]
 
 ### Note
 
-**bash-work-queue** gets queued it self in order to respawn the job queue and is treated as a last job item.
+`bash-work-queue` gets queued itself in order to respawn the workqueue and is treated as a last job item.
