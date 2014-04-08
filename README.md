@@ -38,3 +38,6 @@ Or in case you have placed it at /etd/init.d/ you can run it as a service:
 
     service workqueue.bash [start|stop|status]
 
+### Note
+
+**bash-work-queue** gets queued it self in order to respawn the job queue and is treated as a last job item.
