@@ -1,2 +1,2 @@
 /path/to/script1.sh
-nice -n 15 /path/to/script2.sh
+sudo -u otheruser nice -n 15 /path/to/script2.sh
