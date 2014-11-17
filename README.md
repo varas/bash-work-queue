@@ -17,6 +17,15 @@ Simple job queue in bash using **atd** for Linux.
 
 *Optional*. You can place workqueue.bash in `/etd/init.d/` and get it started at boot time.
 
+Download and install as a service:
+
+    wget -O https://raw.githubusercontent.com/varas/bash-work-queue/master/workqueue.bash /etc/init.d/
+    chmod +x /etc/init.d/workqueue.bash
+
+Configure and launch:
+
+    service workqueue.bash start
+
 ## Configuration
 
 Set up your jobs on a plain text file, one task by line. Example:
