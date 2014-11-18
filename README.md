@@ -19,7 +19,7 @@ Simple job queue in bash using **atd** for Linux.
 
 Download and install as a service:
 
-    wget -O https://raw.githubusercontent.com/varas/bash-work-queue/master/workqueue.bash /etc/init.d/
+    wget https://raw.githubusercontent.com/varas/bash-work-queue/master/workqueue.bash -O /etc/init.d/workqueue.bash
     chmod +x /etc/init.d/workqueue.bash
 
 Configure and launch:
